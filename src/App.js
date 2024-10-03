@@ -1,14 +1,12 @@
 import "./App.css";
-import Goodbye from "./components/Goodbye.js";
-import Hello from "./components/Hello.js";
+import Greetings from "./components/Greetings.js";
 
 function App() {
   return (
     <div className="App App-header">
       <header></header>
       <main>
-        <Hello />
-        <Goodbye />
+        <Greetings isHello={true} />
       </main>
     </div>
   );

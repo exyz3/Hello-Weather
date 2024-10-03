@@ -1,2 +1,2 @@
-export { default as Hello } from "./Hello";
+export { default as Greetings } from "./Greetings";
 export { default as Goodbye } from "./Goodbye";
