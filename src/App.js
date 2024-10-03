@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Hello from "./komponenta1";
 
 function App() {
   return (
@@ -7,7 +7,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <main></main>
+      <main>
+        <Hello />
+      </main>
     </div>
   );
 }
