@@ -14,7 +14,7 @@ const ActiveForecast = () => {
         type="text"
         value={number}
         onChange={handleChange}
-        placeholder="Enter a number"
+        placeholder="Enter weather prediction"
       />
       <PoP isNumber={number} />
     </div>

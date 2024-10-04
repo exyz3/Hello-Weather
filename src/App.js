@@ -1,15 +1,15 @@
 import "./App.css";
-import Greetings from "./components/Greet/Hello.js";
-import PoP from "./components/Weather/Forecast.js";
-import ActiveForecast from "./components/ActiveWeather/ActiveForecast.js";
+import Greetings from "./components/Greet/Hello";
+// import PoP from "./components/Weather/Forecast";
+import ActiveForecast from "./components/ActiveWeather/ActiveForecast";
 
 function App() {
   return (
     <div className="App App-header">
       <header></header>
       <main>
-        <Greetings isHello={false} />
-        <PoP isNumber={"www"} />
+        <Greetings isHello={true} />
+        {/* <PoP isNumber={10} /> */}
         <ActiveForecast />
       </main>
     </div>

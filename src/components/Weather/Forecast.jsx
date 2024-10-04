@@ -1,9 +1,14 @@
-export function LowerNumber() {
-  return <p>It will be a sunny day</p>;
+import React from "react";
+export class LowerNumber extends React.Component {
+  render() {
+    return <p>It will be a sunny day</p>;
+  }
 }
 
-export function HigherNumber() {
-  return <p>It will rain today</p>;
+export class HigherNumber extends React.Component {
+  render() {
+    return <p>It will rain today</p>;
+  }
 }
 
 function PoP(props) {
