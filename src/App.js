@@ -8,7 +8,7 @@ function App() {
     <div className="App App-header">
       <header></header>
       <main>
-        <Greetings isHello={false} />
+        <Greetings isHello={true} />
         {/* <Forecast isNumber={10} /> */}
         <ActiveForecast />
       </main>
