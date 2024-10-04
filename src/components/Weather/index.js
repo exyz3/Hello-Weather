@@ -1,1 +1,1 @@
-export { default as PoP } from "./Forecast";
+export { default as Forecast } from "./Forecast";

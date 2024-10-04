@@ -11,7 +11,7 @@ export class HigherNumber extends React.Component {
   }
 }
 
-function PoP(props) {
+function Forecast(props) {
   const isNumber = props.isNumber;
 
   if (isNaN(isNumber)) {
@@ -30,4 +30,4 @@ function PoP(props) {
     );
 }
 
-export default PoP;
+export default Forecast;

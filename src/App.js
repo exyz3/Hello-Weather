@@ -1,6 +1,6 @@
 import "./App.css";
 import Greetings from "./components/Greet/Hello";
-// import PoP from "./components/Weather/Forecast";
+// import Forecast from "./components/Weather/Forecast";
 import ActiveForecast from "./components/ActiveWeather/ActiveForecast";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <div className="App App-header">
       <header></header>
       <main>
-        <Greetings isHello={true} />
-        {/* <PoP isNumber={10} /> */}
+        <Greetings isHello={false} />
+        {/* <Forecast isNumber={10} /> */}
         <ActiveForecast />
       </main>
     </div>
