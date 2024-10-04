@@ -6,7 +6,7 @@ function App() {
     <div className="App App-header">
       <header></header>
       <main>
-        <Greetings isHello={true} />
+        <Greetings isHello={false} />
       </main>
     </div>
   );
