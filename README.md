@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Hello & Weather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Zadatak
 
-## Available Scripts
+Potrebno napraviti React aplikaciju koja će imati slijedeće:
 
-In the project directory, you can run:
+1.  Napraviti novu React aplikaciju.
+2.  Potrebno je napraviti dvije komponente
+3.  Glavna komponenta poziva drugu komponentu ConditionalRendering sa svojstvom (props) number
+4.  U ovisnusti o poslanom broju treba ispisati drukčiji tekst
+5.  Ako se pošalje nedefinirani broj, komponenta ConditionalRendering ništa ne ispisuje
 
-### `npm start`
+## Rješenje
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.  Kreiramo React aplikaciju sa:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    - npx create-react-app my-app
 
-### `npm test`
+2.  Kreiranje dvije komponente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Komponente konvencijski stavljamo u folder "components" i ime nase mape treba opisivati što se unutra nalazi. Sve komponente koji su povezani stavljamo u taj folder.
+- Naziv nase datoteke treba biti isti naziv kao i naša komponenta
+- Svaka komponenta treba imati svoju datoteku. - nisam stavio neke komponente u zasebnu datoteku iz razloga jer taj kod samo tu koristim za primjer i radi brzine.
 
-### `npm run build`
+vise o tome: https://medium.com/@yogeshblogger14/mastering-react-js-best-practices-for-professional-naming-conventions-b0a6343dd0fd
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Jednostavan primjer Greetings:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- U mapi Greetings imamo Goodbye.js, Hello.js i index.js. Na ovom primjeru provjezbam kako se komponente importaju iz drugih komponenata i kako ih iskoristit u App.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- kreacija komponente:
 
-### `npm run eject`
+import React from "react";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+function NekaKomponenta() {
+return (
+<>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>Ovo je samo primjer</p>
+<p>Kako napraviti komponentu.</p>
+</>
+);
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export default NekaKomponenta;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Kada koristimo komponente za razliku od JS-a trebamo koristiti return(). return() vraca podatke koje smo proslijedili u komponenti, koji tada parent komponenta moze koristiti. Generalno se koristi kada želimo vratiti jednu vrijednost iz komponente.
 
-## Learn More
+(render vs return)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Export:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Da bi smo iskoristili naše komponente potrebno ih je "export". Tu dolazi u igru index.js kao naš sabirni centar svih naših komponenata u toj mapi.
 
-### Code Splitting
+- defalut export:
+  export { default as NekaKomponenta } from "./NekaMapa";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- named export:
+  export {NekaKomponenta} from "./NekaMapa"
 
-### Analyzing the Bundle Size
+\*zanimljivo: https://dev.to/phuocng/avoid-using-default-exports-a1c
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- slijed radnje:
+  NekaKomponenta > index.js > App.js
 
-### Making a Progressive Web App
+- U App.js zelimo iskoristiti našu komponentu. Prvo ju trebamo "importat".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+import NekaKomponenta from "./components/NekaMapa/NekaKomponenta";
 
-### Advanced Configuration
+te ju iskorititi:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+function App() {
+return (
 
-### Deployment
+<div>
+    <main>
+        <NekaKomponenta/>
+    </main>
+</div>
+);
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Props
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+U Greetings.js koristimo props
+props je skraceno za properties
+props su kao argumenti u JS

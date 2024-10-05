@@ -1,11 +1,11 @@
 import React from "react";
 import Goodbye from "./Goodbye";
 
-export function Greetings() {
+export function Hello() {
   return <h1>Hello!</h1>;
 }
 
-export default function Hello(props) {
+export default function Greetings(props) {
   const isHello = props.isHello;
-  return <>{isHello ? <Greetings /> : <Goodbye />}</>;
+  return <>{isHello ? <Hello /> : <Goodbye />}</>;
 }

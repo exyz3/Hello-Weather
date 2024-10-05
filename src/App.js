@@ -1,5 +1,5 @@
 import "./App.css";
-import Greetings from "./components/Greet/Hello";
+import Greetings from "./components/Greetings/Hello";
 // import Forecast from "./components/Weather/Forecast";
 import ActiveForecast from "./components/ActiveWeather/ActiveForecast";
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App App-header">
       <header></header>
       <main>
-        <Greetings isHello={true} />
+        <Greetings isHello={false} />
         {/* <Forecast isNumber={10} /> */}
         <ActiveForecast />
       </main>

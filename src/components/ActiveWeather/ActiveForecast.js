@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PoP } from "../Weather";
+import { Forecast } from "../Weather";
 
 const ActiveForecast = () => {
   const [number, setNumber] = useState("");
@@ -16,7 +16,7 @@ const ActiveForecast = () => {
         onChange={handleChange}
         placeholder="Enter weather prediction"
       />
-      <PoP isNumber={number} />
+      <Forecast isNumber={number} />
     </div>
   );
 };
