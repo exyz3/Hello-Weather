@@ -261,3 +261,5 @@ return //<p>Error: Enter a number.</p>;
 - jednostavne(stateless) komponente ispisuju zadanu informaciju i nemogu promjeniti svoje stanje, dok složene (stateful) komponente mijenjaju informaciju prema inputu korisnika.
 
 primjer stateless i stateful komponente su Forecast i ActiveForecast, a i napravili smo i par stateless primjera.
+
+Ako uočite negdje grešku na ovim primjerima ili definicijama Ili ako imate svojih zadataka mozemo ih proći ovdje. Ako bi htjeli nesto bolje napisati/dodati mozete na git-u poslati request kao vježbu. :)
