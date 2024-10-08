@@ -22,7 +22,7 @@ Potrebno napraviti React aplikaciju koja će imati slijedeće:
 - Naziv nase datoteke treba biti isti naziv kao i naša komponenta
 - Svaka komponenta treba imati svoju datoteku. - nisam stavio neke komponente u zasebnu datoteku iz razloga jer taj kod samo tu koristim za primjer i radi brzine.
 
-vise o tome: https://medium.com/@yogeshblogger14/mastering-react-js-best-practices-for-professional-naming-conventions-b0a6343dd0fd
+vise o tome: [Medium](https://medium.com/@yogeshblogger14/mastering-react-js-best-practices-for-professional-naming-conventions-b0a6343dd0fd)
 
 ### Jednostavan primjer Greetings:
 
@@ -30,19 +30,20 @@ vise o tome: https://medium.com/@yogeshblogger14/mastering-react-js-best-practic
 
 - kreacija komponente:
 
+```
 import React from "react";
 
 function NekaKomponenta() {
 return (
 <>
-
-<p>Ovo je samo primjer</p>
-<p>Kako napraviti komponentu.</p>
+  <p>Ovo je samo primjer</p>
+  <p>Kako napraviti komponentu.</p>
 </>
-);
+  );
 }
 
 export default NekaKomponenta;
+```
 
 - Kada koristimo komponente za razliku od JS-a trebamo koristiti return(). return() vraca podatke koje smo proslijedili u komponenti, koji tada parent komponenta moze koristiti. Generalno se koristi kada želimo vratiti jednu vrijednost iz komponente.
 
@@ -58,7 +59,7 @@ export default NekaKomponenta;
 - named export:
   export {NekaKomponenta} from "./NekaMapa"
 
-\*zanimljivo: https://dev.to/phuocng/avoid-using-default-exports-a1c
+vise o tome na: [Dev](https://dev.to/phuocng/avoid-using-default-exports-a1c)
 
 - slijed radnje:
   NekaKomponenta > index.js > App.js
@@ -69,6 +70,7 @@ import NekaKomponenta from "./components/NekaMapa/NekaKomponenta";
 
 te ju iskorititi:
 
+```
 function App() {
 return (
 
@@ -77,8 +79,9 @@ return (
         <NekaKomponenta/>
     </main>
 </div>
-);
+  );
 }
+```
 
 ### Props
 
@@ -94,11 +97,13 @@ const myElement = <Car brand="Toyota">
 - komponente primaju argument props kao objekt.
   primjer:
 
+```
 function Car(props) {
-return <h2>I am a {props.brand}!</h2>;
+  return <h2>I am a {props.brand}!</h2>;
 }
 
 const myElement = <Car brand="Toyota">
+```
 
 - I za primjer kako cemo iskoristiti komponentnu funkciju i varijablu myElement.
   Slijed radnje:
@@ -111,34 +116,39 @@ const myElement = <Car brand="Toyota">
 - probajte iskoristiti "Car" komponentu u drugoj komponenti, napraviti novi .js recimo Brands. Dodajte svoj auto i napisati je u App.js
 
 primjer Brands.js:
+
+```
 import React from "react";
 import {Car} from Car.js
 
 export function Brands(){
-
   <p>Danas vozim: <Car brand="VasAuto"/></p>
 }
+```
 
 - isto tako mozemo proslijediti "myElement" varijablu u komponentu Car, pa cemo ju iskoristiti na ovaj nacin:
 
-const myElement = "Ford";
-<Car brand={myElement}/>
+```
+  const myElement = "Ford";
+  <Car brand={myElement}/>
+```
 
 - kreirajte objekt pomocu props i iskoristite ju u Brands komponenti. Napravit cemo novu varijablu myCar.
 
+```
 function Car(props){
-<>{props.brand.name}</>
+  <>{props.brand.name}</>
 };
 
 function Brands(){
-myCar = {name: Toyota, model: Celica};
+  myCar = {name: Toyota, model: Celica};
 return(
-
-<p>Danas vozim: <Car brand={myCar}></p>
-);
+  <p>Danas vozim: <Car brand={myCar}></p>
+  );
 }
+```
 
-u Car komponenti mozemo mjenjati sto hocemo prikazati "name" ili "model" u Brands komponenti.
+U Car komponenti mozemo mjenjati sto hocemo prikazati "name" ili "model" u Brands komponenti.
 
 ### Da se vratimo na Greetings
 
@@ -157,27 +167,33 @@ const isHello = props.isHello
 
 ternary operator:
 
-return <>{isHello ? <Hello/> : <Goodbye />}</>;
+```
+  return <>{isHello ? <Hello/> : <Goodbye />}</>;
+```
 
 ovo se moze zapisati na nekoliko načina:
 
 if operator:
 
+```
 if(isHello){
-return <Hello/>;
+  return <Hello/>;
 }
 else {
-return <Goodbye>;
+  return <Goodbye>;
 }
+```
 
 logički operator &&:
 
+```
 return (
 <>
-{isHello && <Hello/>}
-{!isHello && <Goodbye/>}
+  {isHello && <Hello/>}
+  {!isHello && <Goodbye/>}
 </>
 );
+```
 
 - podsjetimo se da return() mora vracati HTML element ili fragment.
 
@@ -186,67 +202,75 @@ return (
 
 Glavna komponenta poziva drugu komponentu ConditionalRendering sa svojstvom props number.
 
+```
 function ConditionalRendering(props){
-number = props.number;
+  number = props.number;
 
 }
 
 function GlavnaKomponenta(){
-<ConditionalRendering number={broj?}>
+  <ConditionalRendering number={broj?}>
 }
+```
 
 4. U ovisnusti o poslanom broju treba ispisati drukčiji tekst
 
+```
 import React from "react";
 
 function ConditionalRendering(props){
-number = props.number;
+  number = props.number;
 
 if(number < 50){
-return <p>Danas ce biti ljep dan</p>;
+  return <p>Danas ce biti ljep dan</p>;
 }
 if(number > 50){
-return <p>Danas ce bit kišni dan</p>;
-}
+  return <p>Danas ce bit kišni dan</p>;
+  }
 }
 
 function GlavnaKomponenta(){
 const number = 20;
 <ConditionalRendering number={number}/>
 }
+```
 
 5.  Ako se pošalje nedefinirani broj, komponenta ConditionalRendering ništa ne ispisuje
 
+```
 import React from "react";
 
 function ConditionalRendering(props){
 number = props.number;
 
 if(number < 50){
-return <p>Danas ce biti ljep dan</p>;
+  return <p>Danas ce biti ljep dan</p>;
 }
 else if(number > 50){
-return <p>Danas ce biti kišni dan</p>;
+  return <p>Danas ce biti kišni dan</p>;
 }
 else{
-return null;
-}
+  return null;
+  }
 }
 
 function GlavnaKomponenta(){
 const number = 20;
-<>
 
+<>
   <h1>Kakav ce dan danas biti:</h1>
   <ConditionalRendering number={number}/>
   </>
 }
+```
 
 - možemo provjeriti dali je varijabla "number" broj, ako nije da nista ne ispisuje
 
+```
 if(isNan(number)){
 return //<p>Error: Enter a number.</p>;
 }
+```
 
 ## Dodatna pitanja
 
