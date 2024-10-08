@@ -289,6 +289,6 @@ if(isNan(number)){
 
 - jednostavne(stateless) komponente ispisuju zadanu informaciju i nemogu promjeniti svoje stanje, dok složene (stateful) komponente mijenjaju informaciju prema inputu korisnika.
 
-Primjer stateless i stateful komponente su Forecast i ActiveForecast, a i napravili smo i par stateless primjera.
+Primjer stateless i stateful komponente su Weather i ActiveWeather, a i napravili smo i par stateless primjera.
 
 Ako uočite negdje grešku na ovim primjerima ili definicijama ili ako imate svojih zadataka mozemo ih proći ovdje. Ako bi htjeli nešto bolje napisati/dodati možete na git-u poslati request kao vježbu. 😄
