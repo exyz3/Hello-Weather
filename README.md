@@ -1,4 +1,4 @@
-# Hello & Weather
+# Hello & Weather - primjeri komponenata u ReactJS
 
 ## Zadatak
 
@@ -14,7 +14,7 @@ Potrebno napraviti React aplikaciju koja će imati slijedeće:
 
 1.  Kreiramo React aplikaciju sa:
 
-    - npx create-react-app my-app
+- npx create-react-app my-app
 
 2.  Kreiranje dvije komponente
 
@@ -22,7 +22,7 @@ Potrebno napraviti React aplikaciju koja će imati slijedeće:
 - Naziv nase datoteke treba biti isti naziv kao i naša komponenta
 - Svaka komponenta treba imati svoju datoteku. - nisam stavio neke komponente u zasebnu datoteku iz razloga jer taj kod samo tu koristim za primjer i radi brzine.
 
-vise o tome: [Medium](https://medium.com/@yogeshblogger14/mastering-react-js-best-practices-for-professional-naming-conventions-b0a6343dd0fd)
+vise o tome na: [Medium](https://medium.com/@yogeshblogger14/mastering-react-js-best-practices-for-professional-naming-conventions-b0a6343dd0fd)
 
 ### Jednostavan primjer Greetings:
 
@@ -92,7 +92,9 @@ U Greetings.js koristimo props
 - props su argumenti koji se prosljeđuju u React komponentama.
 - props se prosljeđuje komponentama kao HTML atribut. primjer:
 
+```
 const myElement = <Car brand="Toyota">
+```
 
 - komponente primaju argument props kao objekt.
   primjer:
@@ -161,14 +163,16 @@ Prije nego sto krenimo na pozivanje pomocu brojeva napravio sam za primjer za "C
 - prosljedimo props kao argument u Greetings komponenti
 - u varijablu spremimo props argument, koristimo ju kao stanje ("condition")
 
+```
 const isHello = props.isHello
+```
 
 - Dali necega ima ili nema i na temelju toga vratimo vrijednost.
 
-ternary operator:
+Ternary operator:
 
 ```
-  return <>{isHello ? <Hello/> : <Goodbye />}</>;
+return <>{isHello ? <Hello/> : <Goodbye />}</>;
 ```
 
 ovo se moze zapisati na nekoliko načina:
@@ -184,7 +188,7 @@ else {
 }
 ```
 
-logički operator &&:
+Logički operator &&:
 
 ```
 return (
@@ -230,7 +234,7 @@ if(number > 50){
 }
 
 function GlavnaKomponenta(){
-const number = 20;
+  const number = 20;
 <ConditionalRendering number={number}/>
 }
 ```
@@ -241,7 +245,7 @@ const number = 20;
 import React from "react";
 
 function ConditionalRendering(props){
-number = props.number;
+  number = props.number;
 
 if(number < 50){
   return <p>Danas ce biti ljep dan</p>;
@@ -255,7 +259,7 @@ else{
 }
 
 function GlavnaKomponenta(){
-const number = 20;
+  const number = 20;
 
 <>
   <h1>Kakav ce dan danas biti:</h1>
@@ -268,7 +272,7 @@ const number = 20;
 
 ```
 if(isNan(number)){
-return //<p>Error: Enter a number.</p>;
+  return //<p>Error: Enter a number.</p>;
 }
 ```
 
@@ -284,6 +288,6 @@ return //<p>Error: Enter a number.</p>;
 
 - jednostavne(stateless) komponente ispisuju zadanu informaciju i nemogu promjeniti svoje stanje, dok složene (stateful) komponente mijenjaju informaciju prema inputu korisnika.
 
-primjer stateless i stateful komponente su Forecast i ActiveForecast, a i napravili smo i par stateless primjera.
+Primjer stateless i stateful komponente su Forecast i ActiveForecast, a i napravili smo i par stateless primjera.
 
-Ako uočite negdje grešku na ovim primjerima ili definicijama Ili ako imate svojih zadataka mozemo ih proći ovdje. Ako bi htjeli nesto bolje napisati/dodati mozete na git-u poslati request kao vježbu. :)
+Ako uočite negdje grešku na ovim primjerima ili definicijama ili ako imate svojih zadataka mozemo ih proći ovdje. Ako bi htjeli nešto bolje napisati/dodati možete na git-u poslati request kao vježbu. 😄
