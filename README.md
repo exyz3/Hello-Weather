@@ -59,14 +59,17 @@ export default NekaKomponenta;
 - named export:
   export {NekaKomponenta} from "./NekaMapa"
 
-vise o tome na: [Dev](https://dev.to/phuocng/avoid-using-default-exports-a1c)
+default vs named export.
+više o tome na: [Dev](https://dev.to/phuocng/avoid-using-default-exports-a1c)
 
 - slijed radnje:
   NekaKomponenta > index.js > App.js
 
-- U App.js zelimo iskoristiti našu komponentu. Prvo ju trebamo "importat".
+- U App.js zelimo iskoristiti našu komponentu. Prvo ju trebamo "import".
 
+```
 import NekaKomponenta from "./components/NekaMapa/NekaKomponenta";
+```
 
 te ju iskorititi:
 
@@ -90,14 +93,13 @@ U Greetings.js koristimo props
 - props je skraceno za properties
 - props su kao argumenti u JS
 - props su argumenti koji se prosljeđuju u React komponentama.
-- props se prosljeđuje komponentama kao HTML atribut. primjer:
+- props se prosljeđuje komponentama kao HTML atribut:
 
 ```
 const myElement = <Car brand="Toyota">
 ```
 
-- komponente primaju argument props kao objekt.
-  primjer:
+- komponente primaju argument props kao objekt:
 
 ```
 function Car(props) {
