@@ -201,11 +201,6 @@ return (
 );
 ```
 
-- podsjetimo se da return() mora vracati HTML element ili fragment.
-
-- Kada koristimo fragment?
-  Fragment je svojstvo u React-u kojeg koristimo kada zelimo grupirati vise elemenata kao lista djece bez da dodajemo dodatne nodove u DOM-u.
-
 Glavna komponenta poziva drugu komponentu ConditionalRendering sa svojstvom props number.
 
 ```
@@ -278,7 +273,11 @@ if(isNan(number)){
 }
 ```
 
-## Dodatna pitanja
+## Definicije
+
+### Kada koristimo fragment?
+
+- Fragment je svojstvo u React-u kojeg koristimo kada zelimo grupirati vise elemenata kao lista djece bez da dodajemo dodatne nodove u DOM-u.
 
 ### Kakve komponente imamo i kako ih dijelimo?
 
