@@ -52,10 +52,16 @@ export default NekaKomponenta;
 - Da bi smo iskoristili naše komponente potrebno ih je "export". Tu dolazi u igru index.js kao naš sabirni centar svih naših komponenata u toj mapi.
 
 - defalut export:
+
+```
   export { default as NekaKomponenta } from "./NekaMapa";
+```
 
 - named export:
+
+```
   export {NekaKomponenta} from "./NekaMapa"
+```
 
 default vs named export.
 više o tome na: [Dev](https://dev.to/phuocng/avoid-using-default-exports-a1c)
