@@ -45,9 +45,7 @@ return (
 export default NekaKomponenta;
 ```
 
-- Kada koristimo komponente za razliku od JS-a trebamo koristiti return(). return() vraca podatke koje smo proslijedili u komponenti, koji tada parent komponenta moze koristiti. Generalno se koristi kada želimo vratiti jednu vrijednost iz komponente.
-
-(render vs return)
+- return() vraca podatke koje smo proslijedili u komponenti, koji tada parent komponenta moze koristiti. Generalno se koristi kada želimo vratiti jednu vrijednost iz komponente.
 
 ### Export:
 
@@ -91,7 +89,6 @@ return (
 U Greetings.js koristimo props
 
 - props je skraceno za properties
-- props su kao argumenti u JS
 - props su argumenti koji se prosljeđuju u React komponentama.
 - props se prosljeđuje komponentama kao HTML atribut:
 
@@ -126,7 +123,9 @@ import React from "react";
 import {Car} from Car.js
 
 export function Brands(){
-  <p>Danas vozim: <Car brand="VasAuto"/></p>
+  return (
+    <p>Danas vozim: <Car brand="VasAuto"/></p>
+  );
 }
 ```
 
@@ -141,11 +140,11 @@ export function Brands(){
 
 ```
 function Car(props){
-  <>{props.brand.name}</>
+  return <>{props.brand.name}</>;
 };
 
 function Brands(){
-  myCar = {name: Toyota, model: Celica};
+  myCar = {name: "Toyota", model: "Celica"};
 return(
   <p>Danas vozim: <Car brand={myCar}></p>
   );
